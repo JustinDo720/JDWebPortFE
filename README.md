@@ -4,10 +4,10 @@
 ## Project Roadmap (subject to change)
 - [x] Connected Vuetify3 with Vue3
 - [x] Remove Base template and create a Navbar
-- [ ] Design the Homepage
+- [x] Design the Homepage
     - [x] Information Card 
-    - [ ] Short Biography
-    - [ ] Current Status
+    - [x] Short Biography
+    - [x] Current Status
 - [ ] Create Footer (if you want to) <-- optional 
 - [ ] Work on Project Display 
 - [ ] Contact Me's Email Address
