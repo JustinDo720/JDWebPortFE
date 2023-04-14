@@ -25,8 +25,9 @@
                 <v-btn
                   size="small"
                   variant="text"
+                  @click="redirect_page(aboutMe.router_view_name)"
                 >
-                  See more...
+                  {{ aboutMe.name }}
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -67,9 +68,6 @@
       </v-container>
     </v-parallax>
   <v-divider></v-divider>
-  <v-container>
-
-  </v-container>
 
 </template>
 
@@ -85,6 +83,7 @@ export default defineComponent({
   components: {
     navbar,
     infocard,
+
   },
   data(){
     return{
@@ -106,10 +105,21 @@ export default defineComponent({
           focus_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et egestas quis ipsum suspendisse ultrices gravida dictum. Mattis nunc sed blandit libero volutpat. Egestas purus viverra accumsan in nisl nisi scelerisque. Placerat in egestas erat imperdiet. Justo eget magna fermentum iaculis eu non diam. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Id porta nibh venenatis cras sed felis. Integer eget aliquet nibh praesent tristique. Purus gravida quis blandit turpis cursus in hac. Nunc aliquet bibendum enim facilisis gravida neque convallis."
         }
       ],
+      aboutMe: {
+        name: "SEE MORE...",
+        router_view_name: "view_aboutme",
+      },
+      inquiry_options: {
+        job_opp: "Job Opportunity",
+        connect: "Connect With Me",
+        feedback: "General/Website Feedback",
+      },
     }
   },
   methods:{
-
+    redirect_page(router_name){
+      this.$router.push({name:router_name})
+    }
   }
 });
 </script>

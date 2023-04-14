@@ -51,11 +51,24 @@
       ></v-list-item>
     </v-list>
   </v-navigation-drawer>
+
+  <!-- contact me modal component -->
+  <contactme v-if="activate_contactme"
+             :style_top="true"
+             @close-contact-me="activate_contactme = !activate_contactme"
+  >
+
+  </contactme>
 </template>
 
 <script>
+import contactme from "@/components/contactme";
+
 export default {
   name: "navBar",
+  components: {
+    contactme
+  },
   data() {
     return {
       title: "Home",
@@ -80,6 +93,7 @@ export default {
       },
       resized: false,
       drawers: false,
+      activate_contactme: false
     };
   },
   methods: {
@@ -89,10 +103,12 @@ export default {
     check_link: function (link) {
       if (link) {
         this.$router.push({ redirect: (window.location.href = link) });
+      } else {
+        // user wants to contact me
+        this.activate_contactme = !this.activate_contactme
       }
     },
   },
-  computed: {},
 };
 </script>
 

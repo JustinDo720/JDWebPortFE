@@ -84,11 +84,23 @@
       <!--      </v-card-actions>-->
     </v-card>
   </v-container>
+
+  <!-- Contact Me Overlay Component -->
+  <contactme v-if="activate_contactme"
+             :style_bottom="true"
+             @close-contact-me="activate_contactme = !activate_contactme"
+  >
+  </contactme>
 </template>
 
 <script>
+import contactme from "@/components/contactme";
+
 export default {
   name: "infocard",
+  components: {
+    contactme,
+  },
   data() {
     return {
       infos: {
@@ -116,12 +128,12 @@ export default {
           icon: "mdi-briefcase",
           router_view_name: "view_projects",
         },
-        about: {
-          name: "About Me",
-          icon: "mdi-information",
-          router_view_name: "view_aboutme",
-        },
+        contactme: {
+          name: "Contact Me",
+          icon: "mdi-card-account-mail",
+        }
       },
+      activate_contactme: false
     };
   },
   methods: {
@@ -135,7 +147,12 @@ export default {
       }
     },
     btn_control_method(control) {
-      this.$router.push({ name: control.router_view_name });
+      if(control.name === this.btn_controls.contactme.name){
+        // we know that the user wants to contact us therefore:
+        this.activate_contactme = !this.activate_contactme;
+      } else {
+        this.$router.push({ name: control.router_view_name });
+      }
     },
   },
 };
