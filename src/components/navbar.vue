@@ -14,98 +14,70 @@
         />
       </router-link>
     </v-btn>
-    <v-spacer></v-spacer>
-    <!-- Information Section -->
-    <v-btn
-      v-for="social in socials"
-      :key="social"
-      size="small"
-      class="mr-5"
-      :color="social.info_color"
-      variant="tonal"
-      v-if="!resized"
-      @click="check_link(social.info_link)"
-    >
-      <v-icon :icon="social.info_icon" class="pr-1" />
-      {{ social.info }}
-    </v-btn>
+    <!-- Navigation Section (maybe consider the middle this time -->
+    <div class="mx-auto" v-if="!resized">
+      <router-link
+          v-for="nav in navigation_buttons"
+          :to="{name: nav.router_name}"
+          tag="button"
+          class="router_link_style pa-2 text-white text-h6"
+          exact-active-class="text-cyan-lighten-2"
+      >
+        {{ nav.name }}
+      </router-link>
+    </div>
 
     <!-- Mobile or Collapse Controller -->
-    <v-app-bar-nav-icon
-      variant="text"
-      v-if="resized"
-      @click="drawers = !drawers"
-    ></v-app-bar-nav-icon>
+    <v-spacer v-if="resized"></v-spacer>
+    <div v-if="resized">
+      <v-app-bar-nav-icon
+          variant="text"
+          v-if="resized"
+          @click="drawers = !drawers"
+      ></v-app-bar-nav-icon>
+    </div>
+
   </v-app-bar>
 
   <!-- Mobile or Collapse View -->
   <v-navigation-drawer v-model="drawers" app dark right temporary>
     <v-list>
       <v-list-item
-        v-for="social in socials"
-        :key="social"
-        :prepend-icon="social.info_icon"
-        :title="social.info"
-        :value="social.info"
-        @click="check_link(social.info_link)"
+        v-for="(nav,index) in navigation_buttons"
+        :key="index"
+        :title="nav.name"
+        :value="nav.name"
+        @click="redirect_user(nav.router_name)"
       ></v-list-item>
     </v-list>
   </v-navigation-drawer>
 
-  <!-- contact me modal component -->
-  <contactme v-if="activate_contactme"
-             :style_top="true"
-             @close-contact-me="activate_contactme = !activate_contactme"
-  >
-
-  </contactme>
 </template>
 
 <script>
-import contactme from "@/components/contactme";
+import router from "@/router";
 
 export default {
   name: "navBar",
-  components: {
-    contactme
-  },
   data() {
     return {
       title: "Home",
-      socials: {
-        github: {
-          info: "Justindo720",
-          info_link: "https://github.com/JustinDo720",
-          info_icon: "mdi-github",
-          info_color: "#eeeeee",
-        },
-        instagram: {
-          info: "@darkowwl",
-          info_link: "https://www.instagram.com/darkowwl/",
-          info_icon: "mdi-instagram",
-          info_color: "#e2306c",
-        },
-        email: {
-          info: "justindo720@gmail.com",
-          info_icon: "mdi-email",
-          info_color: "#43a047",
-        },
-      },
       resized: false,
       drawers: false,
-      activate_contactme: false
+      navigation_buttons: {
+        home: {'name': 'Home', 'router_name': 'home'},
+        project: {'name': 'Project', 'router_name': 'view_projects'},
+        about_me: {'name': 'About Me', 'router_name': 'view_aboutme'},
+      },
     };
   },
   methods: {
     onResize: function () {
       this.resized = window.innerWidth <= 990;
     },
-    check_link: function (link) {
-      if (link) {
-        this.$router.push({ redirect: (window.location.href = link) });
-      } else {
-        // user wants to contact me
-        this.activate_contactme = !this.activate_contactme
+    redirect_user: function (router_name) {
+      if (router_name) {
+        this.$router.push({ name: router_name });
       }
     },
   },
@@ -120,4 +92,9 @@ export default {
   width: 85px;
   height: 50px;
 }
+
+.router_link_style{
+  text-decoration: none;
+}
+
 </style>

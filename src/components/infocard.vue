@@ -87,7 +87,7 @@
 
   <!-- Contact Me Overlay Component -->
   <contactme v-if="activate_contactme"
-             :style_bottom="true"
+             :style_top="true"
              @close-contact-me="activate_contactme = !activate_contactme"
   >
   </contactme>

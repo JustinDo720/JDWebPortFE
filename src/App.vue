@@ -10,7 +10,7 @@
 export default {
   name: "App",
   data: () => ({
-    //
+    // Justin H. Do - Portfolio should be the title of our tab
   }),
 };
 </script>

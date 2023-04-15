@@ -9,6 +9,7 @@
     <!-- Short Biography & Current Project Section -->
     <v-parallax
         :src="require('../assets/images/py_parrallax_img.jpg')"
+        class="mb-10"
     >
       <v-container fluid class="pa-7">
         <v-row justify="space-around">
@@ -68,6 +69,9 @@
       </v-container>
     </v-parallax>
   <v-divider></v-divider>
+  <div>
+    <my-footer></my-footer>
+  </div>
 </template>
 
 <script>
@@ -76,12 +80,14 @@ import { defineComponent } from "vue";
 // Components
 import navbar from "@/components/navbar";
 import infocard from "@/components/infocard";
+import footer from "@/components/footer"
 
 export default defineComponent({
   name: "HomeView",
   components: {
     navbar,
     infocard,
+    'my-footer': footer,
   },
   data(){
     return{
