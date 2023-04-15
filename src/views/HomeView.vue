@@ -68,7 +68,6 @@
       </v-container>
     </v-parallax>
   <v-divider></v-divider>
-
 </template>
 
 <script>
@@ -83,7 +82,6 @@ export default defineComponent({
   components: {
     navbar,
     infocard,
-
   },
   data(){
     return{

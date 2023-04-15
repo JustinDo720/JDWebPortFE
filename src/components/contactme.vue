@@ -46,12 +46,20 @@
 
             <!-- Inquiry Option -->
             <v-row>
-              <v-container>
-                <v-select
-                    label="Inquiry Options"
-                    :items="Object.values(inquiry_options)"
-                    v-model="chosen_inquiry_option"
-                ></v-select>
+              <v-container class="select-container">
+<!--                <v-select-->
+<!--                    label="Inquiry Options"-->
+<!--                    :items="Object.values(inquiry_options)"-->
+<!--                    v-model="chosen_inquiry_option"-->
+<!--                ></v-select>-->
+                <select class="select-box" v-model="chosen_inquiry_option">
+                  <option v-for="(option,index) in inquiry_options" :key="index" :value="option">
+                    {{ option }}
+                  </option>
+                </select>
+                <div class="icon-container">
+                  <v-icon dark>mdi-arrow-down-box</v-icon>
+                </div>
               </v-container>
             </v-row>
             <!-- Text Box for when the user chooses an option-->
@@ -156,7 +164,24 @@ export default{
         email: v => !!(v || '').match(/@/) || "Please enter a valid email address",
         desc_required: v => !!v || 'A Description is Required',
         feedback_desc_required: v => !!v || 'A Feedback Description is Required',
-      }
+      },
+      options : [ {
+        id: 'a',
+        label: 'a',
+        children: [ {
+          id: 'aa',
+          label: 'aa',
+        }, {
+          id: 'ab',
+          label: 'ab',
+        } ],
+      }, {
+        id: 'b',
+        label: 'b',
+      }, {
+        id: 'c',
+        label: 'c',
+      } ],
     }
   },
   methods: {
@@ -203,6 +228,38 @@ export default{
   display: flex;
   flex-direction: column;
   align-items:center;
+}
+
+.select-container{
+  display: flex;
+  justify-content: center;
+  position:relative;
+  min-width: 250px;
+  height: 70px;
+}
+
+.select-container .icon-container{
+  width: 50px;
+  height: 50%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.select-box{
+  border:none;
+  appearance: none;
+  padding: 0 30px 0 15px;
+  width: 100%;
+  color: black;
+  background-color: lightgrey;
+  font-size: 20px;
+}
+
+.icon-container i{
+  font-size: 30px;
+  color: black;
 }
 
 </style>
