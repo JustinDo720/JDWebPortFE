@@ -12,9 +12,12 @@
     - [x] Display Socials
     - [x] Display Title
     - [ ] Work on putting Resize to Vuex 
-- [ ] Work on Resume Display
-    - [ ] Dynamic Information place on Resume 
-    - [ ] Link the Projects to our Project Displays?
+- [x] Work on Resume Display
+    - [x] Dynamic Information place on Resume 
+    - [x] Link the Projects to our Project Displays?
+    - [x] Socials in Vuex
+- [ ] Introduce Vuex 
+    - [ ] Socials and Resize 
 - [ ] Work on Project Display 
     - [ ] Show important Projects
     - [ ] Show Purpose

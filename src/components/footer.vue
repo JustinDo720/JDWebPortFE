@@ -1,24 +1,25 @@
 <template>
-  <v-footer class="bg-grey-darken-3 pa-5">
-    <v-row no-gutters justify="center">
-      <v-btn
-          v-for="social in socials"
-          :key="social"
-          size="medium"
-          class="mr-5 pa-2"
-          :color="social.info_color"
-          variant="tonal"
-          @click="check_link(social.info_link)"
-      >
-        <v-icon :icon="social.info_icon" class="pr-1" />
-        {{ social.info }}
-      </v-btn>
-      <v-col class="text-center mt-4" cols="12">
-        {{ new Date().getFullYear() }} — <strong>{{web_title}}</strong>
-      </v-col>
-    </v-row>
-  </v-footer>
-
+  <div>
+    <v-footer class="bg-grey-darken-3 pa-5">
+      <v-row no-gutters justify="center">
+        <v-btn
+            v-for="social in socials"
+            :key="social"
+            size="medium"
+            class="mr-5 pa-2"
+            :color="social.info_color"
+            variant="tonal"
+            @click="check_link(social.info_link)"
+        >
+          <v-icon :icon="social.info_icon" class="pr-1" />
+          {{ social.info }}
+        </v-btn>
+        <v-col class="text-center mt-4" cols="12">
+          {{ new Date().getFullYear() }} — <strong>{{web_title}}</strong>
+        </v-col>
+      </v-row>
+    </v-footer>
+  </div>
   <!-- contact me modal component -->
   <contactme v-if="activate_contactme"
              :style_bottom="true"
@@ -73,9 +74,15 @@ export default{
         this.activate_contactme = !this.activate_contactme
       }
     },
-    onResize: function () {
-      this.resized = window.innerWidth <= 990;
-    },
   }
 }
 </script>
+
+<style scoped>
+
+/*.sticky-bottom{*/
+/*  position: absolute;*/
+/*  width: 100%;*/
+/*  */
+/*}*/
+</style>

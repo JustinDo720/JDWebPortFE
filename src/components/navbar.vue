@@ -15,7 +15,7 @@
       </router-link>
     </v-btn>
     <!-- Navigation Section (maybe consider the middle this time -->
-    <div class="mx-auto" v-if="!resized">
+    <v-app-bar-title class="mx-auto" v-if="!resized">
       <router-link
           v-for="nav in navigation_buttons"
           :to="{name: nav.router_name}"
@@ -25,7 +25,7 @@
       >
         {{ nav.name }}
       </router-link>
-    </div>
+    </v-app-bar-title>
 
     <!-- Mobile or Collapse Controller -->
     <v-spacer v-if="resized"></v-spacer>
@@ -68,6 +68,7 @@ export default {
         home: {'name': 'Home', 'router_name': 'home'},
         project: {'name': 'Project', 'router_name': 'view_projects'},
         about_me: {'name': 'About Me', 'router_name': 'view_aboutme'},
+        resume: {'name': 'Resume', 'router_name': 'view_resume'},
       },
     };
   },
