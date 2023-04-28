@@ -32,9 +32,15 @@ export default createStore({
         info_color: "#3dba2e",
       },
     },
+    resized: false,
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    changeResize(state, payload){
+      // we can access our states when we commit a mutation
+      state.resized = payload.resized_screen
+    }
+  },
   actions: {},
   modules: {},
 });

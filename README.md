@@ -11,17 +11,23 @@
 - [x] Create Footer (if you want to) <-- optional 
     - [x] Display Socials
     - [x] Display Title
-    - [ ] Work on putting Resize to Vuex 
+    - [x] Work on putting Resize to Vuex 
 - [x] Work on Resume Display
     - [x] Dynamic Information place on Resume 
     - [x] Link the Projects to our Project Displays?
     - [x] Socials in Vuex
-- [ ] Introduce Vuex 
-    - [ ] Socials and Resize 
+- [x] Introduce Vuex 
+    - [x] Socials and Resize 
 - [ ] Work on Project Display 
     - [ ] Show important Projects
-    - [ ] Show Purpose
-    - [ ] Show Development?
+      - [ ] Show Purpose
+      - [ ] Show Development?
+    - [ ] Show all Projects
+      - [x] Show Purpose
+      - [x] Show Brief Description
+      - [x] Show Learnings
+      - [ ] Fully Designed
+      - [ ] Show Development? (removed)
 - [x] Contact Me's Email Address
     - [x] Contact Me Modal 
     - [x] Feedback Portion

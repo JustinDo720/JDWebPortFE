@@ -75,6 +75,8 @@ export default {
   methods: {
     onResize: function () {
       this.resized = window.innerWidth <= 990;
+      // we're going to make sure our store is also updated if resize does happen in navbar
+      this.$store.commit('changeResize', {resized_screen: this.resized}) // sent a payload when we're committing a mutation
     },
     redirect_user: function (router_name) {
       if (router_name) {

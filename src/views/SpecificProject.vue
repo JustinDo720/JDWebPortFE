@@ -1,8 +1,10 @@
 <template>
 Project {{ project_slug }}
+  {{ resized }}
 </template>
 
 <script>
+import { mapState } from 'vuex'
 
 export default{
   name:"SpecificProject",
@@ -10,6 +12,11 @@ export default{
     return{
       project_slug: "",
     }
+  },
+  computed:{
+    ...mapState([
+        'resized'
+    ])
   },
   created(){
     this.project_slug = this.$route.params.project_slug
