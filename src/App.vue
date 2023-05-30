@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-main>
-      <navbar class="mb-10"></navbar>
-        <router-view />
+      <navbar></navbar>
+        <router-view/>
       <my-footer></my-footer>
     </v-main>
   </v-app>

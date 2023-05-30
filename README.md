@@ -18,9 +18,9 @@
     - [x] Socials in Vuex
 - [x] Introduce Vuex 
     - [x] Socials and Resize 
-- [ ] Work on Project Display 
-    - [ ] Show important Projects
-      - [ ] Show Purpose
+- [x] Work on Project Display 
+    - [x] Show important Projects
+      - [x] Show Purpose
       - [ ] Show Development?
     - [ ] Show all Projects
       - [x] Show Purpose
@@ -32,6 +32,9 @@
     - [x] Contact Me Modal 
     - [x] Feedback Portion
     - [x] Bind them to our footer & infocard
+- [ ] About Me Display
+    - [ ] Quote from teacher?
+    - [ ] Different sections
 - [ ] Test backend API for data (make sure you redeploy backend servers) <-- postman 
 - [ ] Add data into the backend and make sure it's correctly displayed upfront
 - [ ] Deploy (I'm not sure if we want to do AWS kinda costly)

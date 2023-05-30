@@ -1,8 +1,8 @@
 <template>
   <!-- All Projects available in the directory -->
-  <v-container>
-    <v-row no-gutters justify="center">
-      <div class="text-h4 text-center font-weight-bold">
+  <v-container class="mt-5">
+    <v-row no-gutters justify="center" class="pa-10">
+      <div class="text-h3 text-center font-weight-bold">
         Projects to Showcase
       </div>
     </v-row>
@@ -17,7 +17,12 @@
           class="pa-5 mb-2"
         >
           <v-card-title>
-            {{ project.name }}
+            <router-link
+                :to="{name: 'view_specific_project', params: {'project_slug': project.slug}}"
+                class="router_link_style pa-2 text-cyan-lighten-2 text-h4 font-weight-black"
+            >
+              {{ project.name }}
+            </router-link>
           </v-card-title>
           <v-card-subtitle>
             <i>Tools: {{ tools_joined(project.tools) }}</i>

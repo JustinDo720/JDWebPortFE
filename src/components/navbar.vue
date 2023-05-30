@@ -66,7 +66,7 @@ export default {
       drawers: false,
       navigation_buttons: {
         home: {'name': 'Home', 'router_name': 'home'},
-        project: {'name': 'Project', 'router_name': 'view_projects'},
+        project: {'name': 'Projects', 'router_name': 'view_projects'},
         about_me: {'name': 'About Me', 'router_name': 'view_aboutme'},
         resume: {'name': 'Resume', 'router_name': 'view_resume'},
       },
