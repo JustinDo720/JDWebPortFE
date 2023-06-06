@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-footer class="bg-grey-darken-3 pa-5">
+    <v-footer class="bg-grey-darken-3 pa-5" absolute>
       <v-row no-gutters justify="center">
         <v-btn
             v-for="social in socials"
