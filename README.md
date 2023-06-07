@@ -22,19 +22,19 @@
     - [x] Show important Projects
       - [x] Show Purpose
       - [ ] Show Development?
-    - [ ] Show all Projects
+    - [x] Show all Projects
       - [x] Show Purpose
       - [x] Show Brief Description
       - [x] Show Learnings
-      - [ ] Fully Designed
+      - [x] Fully Designed
       - [ ] Show Development? (removed)
 - [x] Contact Me's Email Address
     - [x] Contact Me Modal 
     - [x] Feedback Portion
     - [x] Bind them to our footer & infocard
-- [ ] About Me Display
-    - [ ] Quote from teacher?
-    - [ ] Different sections
+- [x] About Me Display
+    - [x] Quote from teacher?
+    - [x] Different sections
 - [ ] Test backend API for data (make sure you redeploy backend servers) <-- postman 
 - [ ] Add data into the backend and make sure it's correctly displayed upfront
 - [ ] Deploy (I'm not sure if we want to do AWS kinda costly)
